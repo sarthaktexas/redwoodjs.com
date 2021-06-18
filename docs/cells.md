@@ -93,7 +93,7 @@ export const Success = ({ posts, authors }) => {
 }
 ```
 
-If `QUERY` is a function, it has to return a valid GraphQL syntax tree.
+If `QUERY` is a function, it has to return a valid GraphQL document.
 Use a function if your queries need to be more dynamic:
 
 <!-- Source: https://community.redwoodjs.com/t/custom-github-jwt-auth-with-redwood-auth-advice-needed/610 -->
