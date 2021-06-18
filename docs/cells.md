@@ -250,13 +250,15 @@ Note that you can still pass any other props to `Success`. After all, it's still
 
 ### When should I use a Cell?
 
-A good rule of thumb for when to use a Cell is if your component needs some data from a database or other service that may be delayed in responding. Let Redwood worry about juggling what is displayed when. You just focus on what those things should look like.
+Whenever you want to fetch data. Let Redwood juggle what's displayed when. You just focus on what those things should look like.
 
-<!-- Source: https://github.com/redwoodjs/redwood/pull/413 -->
-For one-off queries, there's always `useApolloClient`. This hook returns the client, which you can use to make queries:
+While you can use Cells whenever you want to fetch data, it's important to note that you don't have to. You can do anything you want! For example, for one-off queries, there's always `useApolloClient`. This hook returns the client, which you can use to make queries:
 
 ```javascript
+// in some react component...
+
 client = useApolloClient()
+
 client.query({
   query: gql`
     ...
@@ -320,7 +322,7 @@ export const Success = ({ posts }) => {
 }
 ```
 
-And now let's say that Babel isn't going to come along and assemble our exports into a higher-order component. What might we do?
+And now let's say that Babel isn't going to come along and assemble our exports. What might we do?
 
 We'd probably do something like this:
 
@@ -387,4 +389,4 @@ export const Cell = () => {
 
 That's a lot of code. A lot of imperative code too.
 
-We're basically just dumping the contents of [withCellHOC.tsx](https://github.com/redwoodjs/redwood/blob/main/packages/web/src/components/withCellHOC.tsx) into this file. Can you imagine having to do this every time you wanted to fetch data that might be delayed in responding? Yikes.
+We're basically just dumping the contents of [createCell.tsx](https://github.com/redwoodjs/redwood/blob/main/packages/web/src/components/createCell.tsx) into this file. Can you imagine having to do this every time you wanted to fetch data that might be delayed in responding? Yikes.
