@@ -60,7 +60,11 @@ Only `QUERY` and `Success` are required. If you don't export `Empty`, empty resu
 
 `Loading`, `Empty`, `Failure`, and `Success` all have access to the same set of props, with `Failure` and `Success` getting exclusive access to `error` and `data` respectively. So, in addition to displaying the right component, a Cell funnels the right props to the right component.
 
-This prop set is composed of 1) what's returned from Apollo Client's `Query` component, which is quite a few things&mdash;see their [API reference](https://www.apollographql.com/docs/react/api/react-components/#render-prop-function) for the full list (note that, as we just mentioned, `error` and `data` are only available to `Failure` and `Success` respectively. And Cells use `loading` to decide when to show `Loading`, so you don't get that one either)&mdash;and 2) props passed down from the parent component in good ol' React fashion.
+This set of props is composed of:
+
+1) what's returned from Apollo Client's `Query` component, which is quite a few things&mdash;see their [API reference](https://www.apollographql.com/docs/react/api/react-components/#render-prop-function) for the full list (note that, as we just mentioned, `error` and `data` are only available to `Failure` and `Success` respectively. And Cells use `loading` to decide when to show `Loading`, so you don't get that one either)
+
+2) props passed down from the parent component in good ol' React fashion
 
 ### QUERY
 
