@@ -32,13 +32,10 @@ Done in 1.07s.
 
 ### Single Item Cell vs List Cell
 
-Sometimes, you want a Cell that renders a single item, like the above example. At other times, you want a list of items.
+Sometimes you want a Cell that renders a single item, like the above example. Other times, you want a list of items. The Redwood cell generator can do both for you by detecting if `<name>` is plural. For example, to generate a Cell that renders a list of users, run `yarn rw generate cell users`.
 
-The Redwood cell generator can do both for you, and detects if the `<name>` you pass is plural.
+> For **irregular words** whose plural and singular are identical, such as *equipment* or *pokemon*, if you want a list, just specify the list flag: `yarn rw generate cell equipment --list`
 
-To generate a Cell that gets you a list of users, instead, you would simply run `yarn rw generate cell users`.
-
-> For **irregular words** whose plural and singular is identical, such as *equipment* or *pokemon*, if you want a list simply specify the list flag: `yarn rw generate cell equipment --list`
 ## Cells in-depth
 
 We'll go over each of these files in detail. But know that the file appended with just `.js` (in the example above, `UserCell.js`) contains all your Cell's logic.
