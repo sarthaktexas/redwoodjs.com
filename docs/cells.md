@@ -164,7 +164,7 @@ export const afterQuery = (data) => ({...data})
 
 ### Loading
 
-If the request is in flight, a Cell renders `Loading`.
+If there's no cached data and the request is in flight, a Cell renders `Loading`. 
 
 For a production example, navigate to predictcovid.com, the first site made with Redwood. Usually, when you first navigate there, you'll see most of the dashboard spinning. Those are `Loading` components in action!
 
